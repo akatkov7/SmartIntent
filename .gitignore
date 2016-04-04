@@ -7,7 +7,6 @@
 /build
 /captures
 
-
 # Built application files
 *.apk
 *.ap_
@@ -47,3 +46,5 @@ captures/
 
 # Keystore files
 *.jks
+
+bintray.properties
