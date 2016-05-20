@@ -10,7 +10,7 @@ import me.akatkov.smartintent.SmartIntent
 class SecondActivity : AppCompatActivity() {
 
     var value1: Int = 0
-    var value2: Int? = null
+    lateinit var value2: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

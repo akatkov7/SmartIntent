@@ -1,6 +1,5 @@
 package me.akatkov.smartintentproject
 
-import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -18,6 +17,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startSecondActivity(view: View) {
-        SmartIntent(this, SecondActivity::class.java).startActivity(SecondActivity::value1.assign(12), SecondActivity::value2.assign(null))
+        SmartIntent(this, SecondActivity::class.java).startActivity(SecondActivity::value1.assign(12), SecondActivity::value2.assign("lateinit"))
     }
 }
