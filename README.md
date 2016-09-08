@@ -4,9 +4,12 @@ SmartIntent is a simple Intent wrapper that adds type safety for passing your da
 
 A simple example:
 ```kotlin
+// note that we have to store a copy here because editText will be null
+// when the new activity launches
+val valueToPass = editText.text.toString()
 SmartIntent(this, SomeActivity::class.java).startActivity {
     // testString is a property on SomeActivity
-    testString = editText.text.toString()
+    testString = valueToPass
 }
 ```
 
@@ -60,5 +63,6 @@ override fun onSaveInstanceState(outState: Bundle) {
 ```
 
 ## TODO
+- See if there is a better way to pass values from UI elements through SmartIntent
 - Finish adding support for all of the Bundle put* methods
 - More robust testing
