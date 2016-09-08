@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="me.akatkov.smartintentproject.MainActivity">
+    tools:context="me.akatkov.smartintentproject.SecondActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,18 +15,12 @@
         android:text="Hello World!"
         android:id="@+id/textView" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="Enter value to pass through intent!"
-        android:id="@+id/editText" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start Second Activity"
+        android:text="Recreate Activity"
         android:id="@+id/button"
-        android:onClick="startSecondActivity"
+        android:onClick="recreate"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="187dp" />
