@@ -4,7 +4,7 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'me.akatkov.smartintent' // Change this to match your package name
-version = '0.1' // Change this to match your version number
+version = '0.2' // Change this to match your version number
 
 android {
     compileSdkVersion 24
@@ -14,7 +14,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
-        versionName "0.1"
+        versionName "0.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -66,10 +66,10 @@ bintray {
         name = 'SmartIntent'
 
         version {
-            name = '0.1'
-            desc = 'A simple Intent class that adds type safety to your data when passing between Android activities'
+            name = '0.2'
+            desc = ' A simple Intent wrapper that adds type safety for passing your data between Android activities in Kotlin.'
             released  = new Date()
-            vcsTag = '0.1'
+            vcsTag = '0.2'
         }
 
         licenses = ['MIT']
@@ -77,19 +77,4 @@ bintray {
         websiteUrl = 'https://github.com/hathibelagal/LibraryTutorial'
     }
     configurations = ['archives']
-}
-
-bintray {
-    user = 'akatkov'
-    key = '69db9a17fc4448609e869ac93debb25f8580da6f'
-    publications = ['MyPublication']
-    pkg {
-        repo = 'maven'
-        name = 'KotlinyJSON'
-        licenses = ['MIT']
-        vcsUrl = 'https://github.com/akatkov7/KotlinyJSON.git'
-        version {
-            name = '$version'
-        }
-    }
 }
