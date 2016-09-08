@@ -15,7 +15,7 @@ class SecondActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.second_activity_layout)
 
         if (savedInstanceState == null) {
             SmartIntent.unwrapIntent(this)
