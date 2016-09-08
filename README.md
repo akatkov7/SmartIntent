@@ -15,12 +15,22 @@ Basically, this library allows you to specify a custom initialization block for 
 To execute the code in your startActivity, do this in your SomeActivity:
 ```kotlin
 override fun onCreate(savedInstanceState: Bundle?) {
-    ...
+    // ...
 
     SmartIntent.unwrapIntent(this)
     // testString is now set in this class to the correct value
 
-    ...
+    // ...
+}
+```
+
+## Installation Instructions
+This library can be used in your project through Gradle:
+
+Just add the dependency:
+```gradle
+dependencies {
+    compile 'me.akatkov.smartintent:smartintent:0.1'
 }
 ```
 
