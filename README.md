@@ -4,13 +4,7 @@ SmartIntent is a simple Intent wrapper that adds type safety for passing your da
 
 A simple example:
 ```kotlin
-// note that we have to store a copy here because editText will be null
-// when the new activity launches
-val valueToPass = editText.text.toString()
-SmartIntent(this, SomeActivity::class.java).startActivity {
-    // testString is a property on SomeActivity
-    testString = valueToPass
-}
+SmartIntent.startActivity(this, SomeActivity::class.java, SomeActivity::testString to editText.text.toString)
 ```
 
 Basically, this library allows you to specify a custom initialization block for your new activity while allowing you to pass data safely to the new activity.
@@ -43,26 +37,22 @@ There is progress being made on a SmartBundle class as well that will allow you 
 
 Example:
 ```kotlin
+override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    super.onRestoreInstanceState(savedInstanceState)
+    
+    if (savedInstanceState != null) {
+        SmartBundle.unwrapBundle(this, savedInstanceState)
+        // do any setup now that properties are set
+    }
+}
+
 override fun onSaveInstanceState(outState: Bundle) {
     super.onSaveInstanceState(outState)
 
-    SmartBundle(this, outState).saveInstanceState {
-        // supports properties
-        save(SecondActivity::testString) { value ->
-            // this is called when it is restored
-            testString = value
-            textView.text = "Restored value: " + testString
-        }
-        
-        // also supports not properties
-        save("keyForBundle", valueToStore) { value ->
-            // do something with valueToStore
-        }
-    }
+    SmartBundle.saveInstanceState(this, outState, SecondActivity::testString to testString)
 }
 ```
 
 ## TODO
-- See if there is a better way to pass values from UI elements through SmartIntent
-- Finish adding support for all of the Bundle put* methods
+- Decide if init blocks should stay
 - More robust testing
