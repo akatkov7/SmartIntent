@@ -33,7 +33,7 @@ This library can be used in your project through Gradle:
 Just add the dependency:
 ```gradle
 dependencies {
-    compile 'me.akatkov.smartintent:smartintent:0.1'
+    compile 'me.akatkov.smartintent:smartintent:0.2'
 }
 ```
 
