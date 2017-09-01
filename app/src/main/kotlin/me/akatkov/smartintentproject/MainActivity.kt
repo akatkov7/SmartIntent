@@ -17,11 +17,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startSecondActivity(view: View) {
-        // note that we have to store a copy here because editText will be null
-        // when the new activity launches
-        val valueToPass = editText.text.toString()
-        SmartIntent(this, SecondActivity::class.java).startActivity {
-            testString = valueToPass
-        }
+        SmartIntent.startActivity(this, SecondActivity::class.java, SecondActivity::testString to editText.text.toString())
     }
 }

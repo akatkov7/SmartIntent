@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import kotlinx.android.synthetic.main.second_activity_layout.*
-import me.akatkov.smartintent.*
+import me.akatkov.smartintent.SmartBundle
+import me.akatkov.smartintent.SmartIntent
 
 /**
  * Created by akatkov on 3/30/16.
@@ -17,27 +18,25 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.second_activity_layout)
 
-        if (savedInstanceState == null) {
-            SmartIntent.unwrapIntent(this)
+        SmartIntent.unwrapIntent(this)
+        // set up your activity now that your properties are set up
+        textView.text = "Passed value: " + testString
+    }
 
-            textView.text = "Passed value: " + testString
-        } else {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+        super.onRestoreInstanceState(savedInstanceState)
+
+        if (savedInstanceState != null) {
             SmartBundle.unwrapBundle(this, savedInstanceState)
-        }
 
+            textView.text = "Restored value: $testString"
+        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
 
-        SmartBundle(this, outState).saveInstanceState {
-            // supports properties
-            save(SecondActivity::testString) { value ->
-                // this is called when it is restored
-                testString = value
-                textView.text = "Restored value: " + testString
-            }
-        }
+        SmartBundle.saveInstanceState<SecondActivity>(outState, SecondActivity::testString to testString)
     }
 
     fun recreate(view: View) {

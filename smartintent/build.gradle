@@ -4,17 +4,17 @@ apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
 group = 'me.akatkov.smartintent' // Change this to match your package name
-version = '0.2' // Change this to match your version number
+version = '0.3' // Change this to match your version number
 
 android {
-    compileSdkVersion 24
-    buildToolsVersion "24.0.2"
+    compileSdkVersion 26
+    buildToolsVersion '26.0.1'
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 24
+        targetSdkVersion 26
         versionCode 1
-        versionName "0.2"
+        versionName "0.3"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -31,14 +31,13 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    androidTestCompile 'com.android.support.test:runner:0.4'
+    androidTestCompile 'com.android.support.test:runner:1.0.1'
     // Set this dependency to use JUnit 4 rules
-    androidTestCompile 'com.android.support.test:rules:0.4'
+    androidTestCompile 'com.android.support.test:rules:1.0.1'
     // Set this dependency to build and run Espresso tests
 //    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
     // Set this dependency to build and run UI Automator tests
 //    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
-    compile 'com.android.support:appcompat-v7:24.2.0'
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
 }
@@ -66,10 +65,10 @@ bintray {
         name = 'SmartIntent'
 
         version {
-            name = '0.2'
+            name = '0.3'
             desc = ' A simple Intent wrapper that adds type safety for passing your data between Android activities in Kotlin.'
             released  = new Date()
-            vcsTag = '0.2'
+            vcsTag = '0.3'
         }
 
         licenses = ['MIT']
