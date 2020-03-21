@@ -27,7 +27,7 @@ This library can be used in your project through Gradle:
 Just add the dependency:
 ```gradle
 dependencies {
-    compile 'me.akatkov.smartintent:smartintent:0.3'
+    compile 'me.akatkov.smartintent:smartintent:0.4'
 }
 ```
 
@@ -56,3 +56,4 @@ override fun onSaveInstanceState(outState: Bundle) {
 ## TODO
 - Decide if init blocks should stay
 - More robust testing
+- Figure out how to upload a pom file on bintray uploads

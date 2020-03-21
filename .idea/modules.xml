@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SmartIntentProject.iml" filepath="$PROJECT_DIR$/SmartIntentProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/smartintent/smartintent.iml" filepath="$PROJECT_DIR$/smartintent/smartintent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartIntentProject.iml" filepath="$PROJECT_DIR$/SmartIntentProject.iml" group="SmartIntentProject" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="SmartIntentProject/app" />
+      <module fileurl="file://$PROJECT_DIR$/smartintent/smartintent.iml" filepath="$PROJECT_DIR$/smartintent/smartintent.iml" group="SmartIntentProject/smartintent" />
     </modules>
   </component>
 </project>

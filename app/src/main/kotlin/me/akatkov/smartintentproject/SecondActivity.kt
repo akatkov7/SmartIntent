@@ -1,7 +1,8 @@
 package me.akatkov.smartintentproject
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import android.os.PersistableBundle
+import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import kotlinx.android.synthetic.main.second_activity_layout.*
 import me.akatkov.smartintent.SmartBundle
@@ -23,14 +24,12 @@ class SecondActivity : AppCompatActivity() {
         textView.text = "Passed value: " + testString
     }
 
-    override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
 
-        if (savedInstanceState != null) {
-            SmartBundle.unwrapBundle(this, savedInstanceState)
+        SmartBundle.unwrapBundle(this, savedInstanceState)
 
-            textView.text = "Restored value: $testString"
-        }
+        textView.text = "Restored value: $testString"
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
